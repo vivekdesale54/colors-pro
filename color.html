@@ -9,7 +9,6 @@
 
     <title>Colors</title>
 </head>
-<body>
     <div class="colors">
         <div class="color">
             <h2>Hex</h2>
@@ -28,14 +27,14 @@
                 class="hue-input"
                 data-hue = "0"/>
             <span>Brightness</span>
-            <input type=" range" 
-            min="0"
-            max="1"
-            step="0.01"
-            name="Brightness"
-            class="bright-input"
-            data-bright =  "0"
-            />
+            <input type="range" 
+                min="0"
+                max="1"
+                step="0.1"
+                name="Brightness"
+                class="bright-input"
+                data-bright =  "0"
+               />
             <span>Saturation</span>
             <input type="range" 
                 min="0"
@@ -64,7 +63,7 @@
                 class="hue-input"
                 data-hue = "1"/>
             <span>Brightness</span>
-            <input type=" range" 
+            <input type="range" 
             min="0"
             max="1"
             step="0.01"
@@ -100,7 +99,7 @@
                 class="hue-input"
                 data-hue = "2"/>
             <span>Brightness</span>
-            <input type=" range" 
+            <input type="range" 
             min="0"
             max="1"
             step="0.01"
@@ -136,7 +135,7 @@
                 class="hue-input"
                 data-hue = "3"/>
             <span>Brightness</span>
-            <input type=" range" 
+            <input type="range" 
             min="0"
             max="1"
             step="0.01"
@@ -172,7 +171,7 @@
                 class="hue-input"
                 data-hue = "4"/>
             <span>Brightness</span>
-            <input type=" range" 
+            <input type="range" 
             min="0"
             max="1"
             step="0.01"
@@ -192,18 +191,20 @@
         </div>
         </div>
     </div>
+    <div class="panel"> 
     <div class="library-panel">
         <button class="library"> <i class="fa-solid fa-book-open"></i></button>
         <p>Library</p>
+    </div>
         <div class="generate-panel"> 
             <button class="generate"><i class="fa-duotone fa-solid fa-arrows-rotate"></i></button>
             <p>Generate</p>  
+        </div>
             <div class="save-panel">
                 <button class="generate"><i class="fa-solid fa-download"></i></button>
                 <p>Save</p>
             </div>
-        </div>
-    </div>
+     </div>
     <div class="copy-container">
         <div class="copy-popup">
              <h3>Copied to clipboard</h3> 
@@ -225,6 +226,8 @@
             <h4>Pick your pallete</h4>
         </div>
     </div>
-    <script src="./colors.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chroma-js@2.1.0/chroma.min.js"></script>
+          <script src="./colors.js"></script>
 </body>
 </html>
