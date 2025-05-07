@@ -40,6 +40,19 @@ svg {
     font-size: 2rem;
     cursor: pointer;
 }
+.sliders button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: none;
+    background: rgb(78, 78, 78);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
 .sliders{
     display: flex;
     flex-direction: column;
@@ -55,20 +68,6 @@ svg {
     /*We are adding an adjustment class*/
     transform: translateY(100px);
     transition: all 0.5s ease-in-out;
-}
-
-.sliders button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.5rem;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    border: none;
-    background: rgb(78, 78, 78);
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
 }
 .sliders.active{
     opacity: 1;
@@ -103,7 +102,7 @@ svg {
 }
 
 .adjust,
- .lock {
+.lock {
     font-size: 2rem;
     border: none;
     background: none;

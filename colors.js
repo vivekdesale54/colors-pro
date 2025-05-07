@@ -9,6 +9,8 @@ const lockButton = document.querySelectorAll(".lock");
 const closeAdjustments = document.querySelectorAll(".close-adjustment");
 const sliderContainers = document.querySelectorAll(".sliders");
 let InitialColors;
+//This is for local storage
+let savedPalletes = []; 
 
 //Add event listeners
 generateBtn.addEventListener("click", randomColors);
@@ -29,21 +31,27 @@ currentHexes.forEach((hex) => {
 });
 
 popup.addEventListener("transitionend", () => {
-    const popupbox = popup.children[0];
+    const popupBox = popup.children[0];
     popup.classList.remove("active");
-    popupbox.classList.remove("active");
+    popupBox.classList.remove("active");
 });
 adjustButton.forEach((button, index) => {
     button.addEventListener("click", () => {
         openAdjustmentPanel(index);
-    })
-});
+    });
+}); 
 
 closeAdjustments.forEach((button, index) => {
     button.addEventListener("click", () => {
         closeAdjustmentPanel(index);
     });
 });
+lockButton.forEach((button, index) => {
+    button.addEventListener("click", e => {
+        lockLayer(e, index);
+    });
+});
+
 
 //Function
 
@@ -62,7 +70,7 @@ function randomColors() {
         //Add it to array
         if (div.classList.contains("locked")) {
             InitialColors.push(hexText.innerText);
-            return;
+            return; 
         } else {
             InitialColors.push(chroma(randomColor).hex());
         }
@@ -200,5 +208,19 @@ function openAdjustmentPanel(index) {
 function closeAdjustmentPanel(index) {
     sliderContainers[index].classList.remove("active");
 }
+function lockLayer(e, index) {
+    const lockSVG = e.target.children[0];
+    const activeBg = colorDivs[index];
+    activeBg.classList.toggle("locked");
+
+    if (lockSVG.classList.contains("fa-lock-open")) {
+        e.target.innerHTML = '<i class="fas fa-lock"></i>';
+    } else {
+        e.target.innerHTML = '<i class="fas fa-lock-open"></i>';
+    }
+}
+
+//Implement Save to Palletes and Local storage stuff 
+const saveBtn = document.querySelector(".save");
 
 randomColors();
